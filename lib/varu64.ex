@@ -12,7 +12,7 @@ defmodule Varu64 do
       iex> Varu64.encode(18446744073709551615)
       <<255, 255, 255, 255, 255, 255, 255, 255, 255>>
   """
-  @spec encode(non_neg_integer) :: non_neg_integer | :error
+  @spec encode(non_neg_integer) :: binary | :error
   def encode(n) when not (is_integer(n) or n < 0), do: :error
   def encode(n) when n < 248, do: <<n>>
   def encode(n) when n < 256, do: <<248, n>>
