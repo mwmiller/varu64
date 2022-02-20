@@ -1,21 +1,5 @@
 # Varu64
 
-**TODO: Add description**
+[A simple variable-length encoding for unsigned 64 bit integers.](https://github.com/AljoschaMeyer/varu64)
 
-## Installation
-
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `varu64` to your list of dependencies in `mix.exs`:
-
-```elixir
-def deps do
-  [
-    {:varu64, "~> 0.1.0"}
-  ]
-end
-```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/varu64>.
-
+An Elixir implementation.  Available in [Hex](https://hex.pm)
