@@ -21,8 +21,7 @@ defmodule Varu64 do
     size = :math.pow(2, bytes * 8) |> trunc
     marker = 247 + bytes
 
-    def encode(n) when n < unquote(size),
-      do: <<unquote(marker)>> <> :binary.encode_unsigned(n, :big)
+    def encode(n) when n < unquote(size), do: <<unquote(marker)>> <> :binary.encode_unsigned(n)
   end
 
   def encode(_), do: :error
@@ -57,7 +56,7 @@ defmodule Varu64 do
     end
   end
 
-  # Gaurd against too short sizes, via val check
+  # Guard against too short sizes, via val check
   def decode(<<val::big-size(8), rest::binary>>) when val < 248, do: {val, rest}
 
   def decode(_), do: :error
