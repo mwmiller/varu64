@@ -42,7 +42,7 @@ defmodule Varu64 do
   @spec decode(binary) :: {non_neg_integer, binary} | :error
   def decode(b) when not is_binary(b), do: :error
 
-  for bytes <- 8..2 do
+  for bytes <- 8..2//-1 do
     bits = bytes * 8
     marker = 247 + bytes
     def decode(<<unquote(marker), 0::8, _::binary>>), do: :error
